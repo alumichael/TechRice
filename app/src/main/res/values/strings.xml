@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">FarmHelp</string>
+    <string name="title_activity_dashboard">Dashboard</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="Open">open</string>
+    <string name="Close">close</string>
+    <string name="menu_home">Home</string>
+
+
+    <string-array name="crop_array">
+        <item> Select Crop </item>
+        <item> Rice </item>
+
+    </string-array>
+
+    <string-array name="state_array">
+        <item> Select State </item>
+        <item> Abia</item>
+        <item> Adamawa</item>
+        <item> Anambra</item>
+        <item> Akwa Ibom</item>
+        <item> Bauchi</item>
+        <item> Bayelsa</item>
+        <item> Benue</item>
+        <item> Borno</item>
+        <item> Cross River</item>
+        <item> Delta</item>
+        <item> Ebonyi</item>
+        <item> Enugu</item>
+        <item> Edo</item>
+        <item> Ekiti</item>
+        <item> Gombe</item>
+        <item> Imo</item>
+        <item> Jigawa</item>
+        <item> Kaduna</item>
+        <item> Kano</item>
+        <item> Katsina</item>
+        <item> Kebbi</item>
+        <item> Kogi</item>
+        <item> Kwara</item>
+        <item> Lagos</item>
+        <item> Nasarawa</item>
+        <item> Niger</item>
+        <item> Ogun</item>
+        <item> Ondo</item>
+        <item> Osun</item>
+        <item> Oyo</item>
+        <item> Plateau</item>
+        <item> Rivers</item>
+        <item> Sokoto</item>
+        <item> Taraba</item>
+        <item> Yobe</item>
+        <item> Zamfara</item>
+        <item> FCT - Abuja</item>
+    </string-array>
+
+
+</resources>
