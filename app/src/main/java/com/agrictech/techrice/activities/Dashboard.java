@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.agrictech.techrice.R;
+import com.agrictech.techrice.UserPreferences;
 import com.agrictech.techrice.frgament.DashBoardFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -22,35 +25,55 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    private DrawerLayout drawerLayout;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-    private Toolbar toolbar;
-    NavigationView navigationView;
-    Fragment fragment;
 
+    private ActionBarDrawerToggle actionBarDrawerToggle;
+
+
+    /** ButterKnife Code **/
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.title_txt)
+    TextView mTitleTxt;
+    @BindView(R.id.fragment_container)
+    FrameLayout mFragmentContainer;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+    /** ButterKnife Code **/
+
+
+
+
+    Fragment fragment;
+    CircleImageView mProfileIcon;
+    TextView nav_lastname;
+    UserPreferences userPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        toolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled( false );
+        getSupportActionBar().setTitle(null);
 
         fragment = new DashBoardFragment();
         showFragment(fragment);
+
+        userPreferences = new UserPreferences(this);
 
         //Set up Navigation Drawer
         NavigationView navigationView = (NavigationView) findViewById( R.id.nav_view );
         navigationView.setItemIconTintList( null );
         navigationView.setNavigationItemSelectedListener( this );
 
-        drawerLayout = (DrawerLayout) findViewById( R.id.drawer_layout);
-        toolbar = findViewById( R.id.toolbar );
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled( false );
         actionBarDrawerToggle = new ActionBarDrawerToggle( this, drawerLayout, toolbar, R.string.Open, R.string.Close);
         actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
         actionBarDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
@@ -62,6 +85,11 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.ic_nav_icon_24);
         drawerLayout.addDrawerListener( actionBarDrawerToggle );
         actionBarDrawerToggle.syncState ();
+
+
+        mProfileIcon=navigationView.getHeaderView(0).findViewById(R.id.profile_photo);
+        nav_lastname=navigationView.getHeaderView(0).findViewById(R.id.username);
+        nav_lastname.setText(userPreferences.getUserLastname());
     }
 
 
@@ -93,6 +121,27 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
             case R.id.nav_home:
                 fragment = new DashBoardFragment();
                 showFragment(fragment);
+                break;
+
+            case R.id.nav_cropping:
+
+                startActivity(new Intent(Dashboard.this,CropCalendarActivity.class));
+                break;
+
+            case R.id.nav_buy_input:
+                startActivity(new Intent(Dashboard.this,BuyInputActivity.class));
+                break;
+
+            case R.id.nav_transact:
+                startActivity(new Intent(Dashboard.this,TransactHistoryActivity.class));
+                break;
+
+            case R.id.nav_consult:
+                startActivity(new Intent(Dashboard.this,ConsultantActivity.class));
+                break;
+
+            case R.id.nav_setting:
+                startActivity(new Intent(Dashboard.this,SettingsActivity.class));
                 break;
 
 

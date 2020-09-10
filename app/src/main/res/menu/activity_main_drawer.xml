@@ -10,19 +10,24 @@
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_cropping"
-            android:icon="@drawable/ic_baseline_home_24"
+            android:icon="@drawable/ic_baseline_calendar_schedule"
             android:title="Cropping Calendar" />
         <item
             android:id="@+id/nav_buy_input"
-            android:icon="@drawable/ic_baseline_home_24"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
             android:title="Buy Input" />
+
+        <item
+            android:id="@+id/nav_transact"
+            android:icon="@drawable/ic_history_24"
+            android:title="Transaction History" />
         <item
             android:id="@+id/nav_consult"
-            android:icon="@drawable/ic_baseline_home_24"
+            android:icon="@drawable/ic_baseline_account_circle_24"
             android:title="Speak to a Consultant" />
         <item
             android:id="@+id/nav_setting"
-            android:icon="@drawable/ic_baseline_home_24"
+            android:icon="@drawable/ic_baseline_settings_24"
             android:title="Settings" />
 
     </group>

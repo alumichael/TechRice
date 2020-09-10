@@ -8,13 +8,13 @@
 
 
     <TextView
-        android:id="@+id/create_account_txt"
+        android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:text="TextView"
+        android:text="Create an Account"
         android:textColor="@color/colorSecondAccent"
         android:textAlignment="textStart"
         android:fontFamily="@font/comfortaa_bold"
@@ -25,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread"
-        tools:text="Create an Account" />
+         />
 
     <Button
         android:id="@+id/register_btn"
@@ -37,7 +37,7 @@
         android:background="@drawable/decorate_button_accent"
         android:elevation="4dp"
         android:fontFamily="@font/comfortaa_bold"
-        android:text="Button"
+        android:text="Register"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
@@ -47,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        tools:text="Register" />
+         />
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/progress3"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_txt"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout

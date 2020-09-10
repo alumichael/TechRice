@@ -39,6 +39,16 @@ public class UserPreferences {
     }
 
 
+    public void setNotification(boolean notification) {
+        editor.putBoolean(Constant.NOTIFICATION, notification);
+        editor.apply();
+    }
+
+    public boolean getNotification() {
+        return sharedPreferences.getBoolean(Constant.NOTIFICATION, true);
+    }
+
+
     public void setFarmerId(int customer_id) {
         editor.putInt(Constant.FARMER_ID, customer_id);
         editor.apply();
@@ -103,6 +113,15 @@ public class UserPreferences {
     }
 
 
+    public void setRequestState(String userState) {
+        editor.putString(Constant.REQUEST_STATE, userState);
+        editor.apply();
+    }
+
+    public String getRequestState() {
+        return sharedPreferences.getString(Constant.REQUEST_STATE, "");
+    }
+
     public void setLGA(String region) {
         editor.putString(Constant.LGA, region);
         editor.apply();
@@ -123,14 +142,26 @@ public class UserPreferences {
     }
 
     public void setLandNature(String landNature) {
-        editor.putString(Constant.LAND_AREA, landNature);
+        editor.putString(Constant.LAND_NATURE, landNature);
         editor.apply();
     }
 
 
     public String getLandNature() {
-        return sharedPreferences.getString(Constant.LAND_AREA, "");
+        return sharedPreferences.getString(Constant.LAND_NATURE, "");
     }
+
+
+    public void setPlantDate(String plantDate) {
+        editor.putString(Constant.PLANT_DATE, plantDate);
+        editor.apply();
+    }
+
+
+    public String getPlantDate() {
+        return sharedPreferences.getString(Constant.PLANT_DATE, "");
+    }
+
 
 
     public void setPhone(String phone) {

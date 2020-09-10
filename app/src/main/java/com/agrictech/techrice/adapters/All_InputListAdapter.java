@@ -5,8 +5,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.solver.widgets.Guideline;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.agrictech.techrice.R;
@@ -16,6 +20,7 @@ import com.agrictech.techrice.model.products.ProductResponseData;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -32,7 +37,7 @@ public All_InputListAdapter(Context context, List<ProductResponseData> cardList)
 @NonNull
 @Override
 public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cropping_list, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.seel_all_product_list, parent, false);
         ButterKnife.bind(this, view);
 
         return new MyViewHolder(view);
@@ -59,7 +64,16 @@ public int getItemCount() {
 
 public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-
+    /** ButterKnife Code **/
+    @BindView(R.id.card_layout)
+    ConstraintLayout mCardLayout;
+    @BindView(R.id.card_img)
+    ImageView mCardImg;
+    @BindView(R.id.crop_name)
+    TextView mCropName;
+    @BindView(R.id.crop_unit)
+    TextView mCropUnit;
+    /** ButterKnife Code **/
 
     ItemClickListener itemClickListener;
 

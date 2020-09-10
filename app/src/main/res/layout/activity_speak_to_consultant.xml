@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:elevation="4dp"
+        app:contentInsetStartWithNavigation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,11 +19,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Speak to Consultant"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Consult"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textColor="@color/colorSecondAccent"
-            android:fontFamily="@font/comfortaa_bold"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="12dp" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -43,52 +46,48 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/image_card"
+    <ImageView
+        android:id="@+id/head_img"
         android:layout_width="0dp"
-        android:layout_height="182dp"
-        android:layout_marginTop="32dp"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView31"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/months_txt"
+        app:layout_constraintDimensionRatio="2:2"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
-
-        <ImageView
-            android:id="@+id/consultant_avatar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/header" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
+        app:srcCompat="@drawable/customers_service" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/months_txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Lorem ipsum jdjjdjdjdjjdjdjdjdjdjjjjjjjjjjjjjjjjjjj7777777777777777777777777777777777777hvjjbjbjbjbubjjjjjjjjjjj"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/comfortaa_bold"
+        android:text="You can book an appointment with us, we are always available"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/start_planting_btn3"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/booking_btn"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline21"
-        app:layout_constraintTop_toBottomOf="@+id/image_card" />
+        app:layout_constraintStart_toStartOf="@+id/guideline21" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="textView31"
+        app:constraint_referenced_ids="months_txt"
         tools:layout_editor_absoluteY="658dp" />
 
     <Button
-        android:id="@+id/start_planting_btn3"
+        android:id="@+id/booking_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="196dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/decorate_button_accent"
         android:elevation="4dp"
         android:text="Book an Appointment"

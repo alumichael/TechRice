@@ -8,6 +8,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
@@ -33,7 +34,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/amount_txt"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/product_title"
-                app:srcCompat="@drawable/man" />
+                app:srcCompat="@drawable/ic_baseline_airport_shuttle_24" />
 
             <TextView
                 android:id="@+id/product_title"

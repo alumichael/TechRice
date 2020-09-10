@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/card_layout"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:elevation="4dp"
         app:cardCornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,7 +32,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/amount_txt"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/product_title"
-                app:srcCompat="@drawable/man" />
+                app:srcCompat="@drawable/ic_seeds" />
 
             <TextView
                 android:id="@+id/product_title"
@@ -42,9 +41,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:fontFamily="@font/comfortaa_bold"
                 android:text="Seed Requirement"
                 android:textColor="@color/colorAccent"
-                android:fontFamily="@font/comfortaa_bold"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/amount_txt"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -59,9 +58,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
-                android:text="Lorem Ipsum hdhdh"
                 android:fontFamily="@font/opensans_regular"
+                android:text="Lorem Ipsum hdhdh"
                 android:textSize="14sp"
+                android:justificationMode="inter_word"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/product_title"
                 app:layout_constraintHorizontal_bias="0.5"

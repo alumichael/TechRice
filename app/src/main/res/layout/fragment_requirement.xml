@@ -33,49 +33,61 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_requrement"
+    <FrameLayout
+        android:id="@+id/framLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        tools:listitem="@layout/require_list"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/start_planting_btn"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
         app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.100000024">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_requrement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/require_list" />
+
+    </FrameLayout>
+
 
     <Button
         android:id="@+id/start_planting_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/decorate_button_accent"
         android:elevation="4dp"
+        android:fontFamily="@font/comfortaa_bold"
         android:text="Start Planting"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
-        android:visibility="visible"
-        android:fontFamily="@font/comfortaa_bold"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/progress5"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline9"
-        app:layout_constraintTop_toBottomOf="@+id/recycler_requrement" />
+        app:layout_constraintTop_toBottomOf="@+id/framLayout" />
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/progress5"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:indicatorColor="@color/colorAccent"
         app:indicatorName="BallSpinFadeLoaderIndicator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
-        app:layout_constraintStart_toStartOf="@+id/guideline9" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/guideline9"
+        app:layout_constraintTop_toBottomOf="@+id/start_planting_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

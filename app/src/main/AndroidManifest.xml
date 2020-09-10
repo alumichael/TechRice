@@ -2,11 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.agrictech.techrice">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/farmhelp_icon_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/farmhelp_icon_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -22,9 +26,10 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.agrictech.techrice.activities.Dashboard" />
 
+
         <meta-data
             android:name="co.paystack.android.PublicKey"
-            android:value=""/>
+            android:value="pk_test_b407f054b4654023ba0a136cc59e45087a2a9cf3"/>
 
         <activity
             android:name=".activities.Dashboard"
@@ -55,6 +60,14 @@
         <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.SettingsActivity"
             android:parentActivityName="com.agrictech.techrice.activities.Dashboard"/>
+        <activity android:name=".activities.TransactHistoryActivity"
+            android:parentActivityName="com.agrictech.techrice.activities.Dashboard"/>
+        <activity android:name=".activities.DetailCalendarActivity"
+           />
+
+
+        <receiver
+            android:name=".alarm.NotificationPublisher" />
 
     </application>
 

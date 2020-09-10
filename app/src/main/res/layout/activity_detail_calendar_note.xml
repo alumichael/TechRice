@@ -5,18 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/comfortaa_bold"
+            android:text="Cropping Calendar"
+            android:textColor="@color/colorSecondAccent"
+            android:textSize="20sp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
     <TextView
         android:id="@+id/title_txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/comfortaa_bold"
         android:text="Land Clearing"
         android:textColor="@color/colorSecondAccent"
-        android:fontFamily="@font/comfortaa_bold"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline20"
         app:layout_constraintStart_toStartOf="@+id/guideline19"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline19"
@@ -47,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/header" />
+            app:srcCompat="@drawable/planting" />
     </androidx.cardview.widget.CardView>
 
     <ScrollView
@@ -69,6 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:justificationMode="inter_word"
                 android:fontFamily="@font/opensans_regular"
                 android:text="Lorem ipsum jdjjdjdjdjjdjdjdjdjdjjjjjjjjjjjjjjjjjjj7777777777777777777777777777777777777777jjjjjjjjjjjjjj"
                 android:textSize="16sp" />

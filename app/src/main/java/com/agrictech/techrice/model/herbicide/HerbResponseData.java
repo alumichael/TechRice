@@ -17,10 +17,18 @@ public class HerbResponseData {
     @SerializedName("option")
     @Expose
     private int option;
-    @SerializedName("fertilizer_required")
-    @Expose
-    private double fertilizerRequired;
 
+    @SerializedName("land_nature")
+    @Expose
+    private String land_nature;
+
+    public String getLand_nature() {
+        return land_nature;
+    }
+
+    public void setLand_nature(String land_nature) {
+        this.land_nature = land_nature;
+    }
 
     public double getHerbicideRequired() {
         return herbicideRequired;
@@ -54,11 +62,4 @@ public class HerbResponseData {
         this.option = option;
     }
 
-    public double getFertilizerRequired() {
-        return fertilizerRequired;
-    }
-
-    public void setFertilizerRequired(double fertilizerRequired) {
-        this.fertilizerRequired = fertilizerRequired;
-    }
 }

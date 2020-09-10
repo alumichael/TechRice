@@ -39,7 +39,7 @@ import static com.agrictech.techrice.Util.ShowMessage;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
     /** ButterKnife Code **/
-    @BindView(R.id.create_account_txt)
+    @BindView(R.id.logo)
     TextView mCreateAccountTxt;
     @BindView(R.id.register_btn)
     Button mRegisterBtn;
@@ -61,10 +61,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     EditText mFirstnameEdt;
     @BindView(R.id.lga_edt)
     EditText mLgaEdt;
-    @BindView(R.id.guideline3)
-    Guideline mGuideline3;
-    @BindView(R.id.guideline4)
-    Guideline mGuideline4;
     @BindView(R.id.spinner_state)
     Spinner mSpinnerState;
     /** ButterKnife Code **/
@@ -79,6 +75,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         userPreferences = new UserPreferences(this);
 
         setAction();
+
+        stateSpinner();
     }
 
     private void setAction(){
@@ -98,7 +96,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         }
     }
-
 
     private void stateSpinner() {
         // Create an ArrayAdapter using the string array and a default spinner
@@ -156,13 +153,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 isValid = false;
             } else if (mPasswordEdt.getText().toString().trim().length()<6) {
                 isValid = false;
-            } else if (stateString.equals("Select State")) {
+            } if (mConfirmPasswordEdt.getText().toString().trim().length()<6) {
+                isValid = false;
+            } else if (! mConfirmPasswordEdt.getText().toString().trim().equals( mPasswordEdt.getText().toString().trim())) {
+                isValid = false;
+            }  else if (stateString.equals("Select State")) {
                 isValid = false;
             }
 
             if (isValid) {
                 //Post Request to Api
-                sendRegData();
+                sentNetworkRequest();
             }else{
                 ShowMessage(this,"Invalid input entered");
             }
@@ -188,28 +189,30 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    private void sendRegData(){
-        mRegisterBtn.setVisibility(View.GONE);
-        mProgress3.setVisibility(View.VISIBLE);
+  /*  private void sendRegData(){
 
-        RegisterPost registerPost =new RegisterPost(mFirstnameEdt.getText().toString(),
-                mLastnameEdt.getText().toString(), mEmailEdt.getText().toString(),
-                mPhoneEdt.getText().toString(),
-                mPasswordEdt.getText().toString(),stateString,
-                mLgaEdt.getText().toString());
+
+        RegisterPost registerPost =new RegisterPost();
         Log.i("RegisterObj", registerPost.toString());
 
         sentNetworkRequest(registerPost);
-    }
+    }*/
 
 
-    private  void sentNetworkRequest(RegisterPost registerPost){
+    private  void sentNetworkRequest(){
+
+        mRegisterBtn.setVisibility(View.GONE);
+        mProgress3.setVisibility(View.VISIBLE);
         try {
 
             //get client and call object for request
             ApiInterface client = ServiceGenerator.createService(ApiInterface.class);
 
-            Call<RegisterResponseHead> call = client.register(registerPost);
+            Call<RegisterResponseHead> call = client.register(mFirstnameEdt.getText().toString(),
+                    mLastnameEdt.getText().toString(), mEmailEdt.getText().toString(),
+                    mPhoneEdt.getText().toString(),
+                    mPasswordEdt.getText().toString(),stateString,
+                    mLgaEdt.getText().toString());
 
             call.enqueue(new Callback<RegisterResponseHead>() {
                 @Override
@@ -219,7 +222,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
                         if(response.code()==200) {
-
+                            mRegisterBtn.setVisibility(View.VISIBLE);
+                            mProgress3.setVisibility(View.GONE);
                             boolean status=response.body().getStatus();
 
                             if(status) {
@@ -229,7 +233,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                 userPreferences.setPhone(phone);
                                 userPreferences.setPassword(password);
 
-                                userPreferences.setEmail(response.body().getRegisterResponseData()
+                               /* userPreferences.setEmail(response.body().getRegisterResponseData()
                                         .getEmail());
                                 userPreferences.setUserFirstname(response.body()
                                         .getRegisterResponseData().getFirstname());
@@ -241,12 +245,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                         .getRegisterResponseData().getLga());
 
                                 userPreferences.setFarmerId(response.body()
-                                        .getRegisterResponseData().getFarmerId());
+                                        .getRegisterResponseData().getFarmerId());*/
 
                                 try {
 
-                                    mRegisterBtn.setVisibility(View.VISIBLE);
-                                    mProgress3.setVisibility(View.GONE);
+
 
                                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                     intent.putExtra(Constant.PHONE,phone);
@@ -294,5 +297,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        this.finish();
+        super.onBackPressed();
+    }
+
+
 
 }

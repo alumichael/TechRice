@@ -24,10 +24,6 @@ public class Fragment_All_Inputs extends Fragment implements View.OnClickListene
     TextView mSeedTxt;
     @BindView(R.id.recycler_inputs)
     RecyclerView mRecyclerInputs;
-    @BindView(R.id.guideline25)
-    Guideline mGuideline25;
-    @BindView(R.id.guideline29)
-    Guideline mGuideline29;
     /** ButterKnife Code **/
 
     // TODO: Rename parameter arguments, choose names that match

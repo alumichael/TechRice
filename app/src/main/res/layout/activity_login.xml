@@ -20,19 +20,16 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/password_edt" />
 
-    <TextView
-        android:id="@+id/create_account_txt"
+    <ImageView
+        android:id="@+id/logo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        app:srcCompat="@drawable/farmhelp_logo"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="FarmHelp" />
+         />
 
     <EditText
         android:id="@+id/phone_edt"
@@ -47,7 +44,7 @@
         android:inputType="phone"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/create_account_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
         android:id="@+id/password_edt"
@@ -78,7 +75,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/decorate_button_accent"
         android:elevation="4dp"
-        android:text="Button"
+        android:text="Login"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
@@ -89,7 +86,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/progress2"
-        tools:text="Login" />
+         />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -118,7 +115,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/barrier_social_btn"
-        app:srcCompat="@drawable/ic_bookmark" />
+        app:srcCompat="@drawable/ic_twitter" />
 
     <ImageButton
         android:id="@+id/facebook_btn"
@@ -132,7 +129,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/twitter_btn"
         app:layout_constraintTop_toBottomOf="@+id/barrier_social_btn"
-        app:srcCompat="@drawable/ic_bookmark" />
+        app:srcCompat="@drawable/ic_facebook" />
 
     <ImageButton
         android:id="@+id/instagram_btn"
@@ -147,7 +144,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/facebook_btn"
         app:layout_constraintTop_toBottomOf="@+id/barrier_social_btn"
-        app:srcCompat="@drawable/ic_bookmark" />
+        app:srcCompat="@drawable/ic_instagram" />
 
     <TextView
         android:id="@+id/register_txt"

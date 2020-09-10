@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:elevation="4dp"
@@ -19,12 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21">
 
-        <ImageView
-            android:id="@+id/card_img"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/header" />
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -36,11 +31,11 @@
                 android:id="@+id/crop_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Rice"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="Soil Testing and Consultancy"
                 android:textColor="@color/colorAccent"
                 android:textSize="14sp"
-                android:fontFamily="@font/comfortaa_bold"
                 app:layout_constraintBottom_toTopOf="@+id/unit_txt"
                 app:layout_constraintEnd_toStartOf="@+id/guideline18"
                 app:layout_constraintStart_toStartOf="@+id/guideline17"
@@ -54,7 +49,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="4dp"
                 android:text="N200/g"
-                android:textColor="@color/colorPrimary"
+                android:textColor="#000"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/crop_name"

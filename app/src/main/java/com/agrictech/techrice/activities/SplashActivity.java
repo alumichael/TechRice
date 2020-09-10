@@ -4,21 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.TextView;
-
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.agrictech.techrice.R;
 import com.agrictech.techrice.UserPreferences;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SplashActivity extends AppCompatActivity {
 
     /** ButterKnife Code **/
-    @BindView(R.id.logo_txt)
-    TextView mLogoTxt;
+    @BindView(R.id.logo_img)
+    ImageView mLogoImg;
     /** ButterKnife Code **/
     // Animation
     Animation  blink;
@@ -35,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
                     R.anim.blink);
 
             //start animation
-            mLogoTxt.startAnimation(blink);
+            mLogoImg.startAnimation(blink);
 
 
 
@@ -61,7 +58,7 @@ public class SplashActivity extends AppCompatActivity {
                     R.anim.blink);
 
 
-            mLogoTxt.startAnimation(blink);
+            mLogoImg.startAnimation(blink);
 
             Thread myThread = new Thread() {
                 @Override
@@ -69,8 +66,13 @@ public class SplashActivity extends AppCompatActivity {
                     try {
                         sleep(1500);
 
-                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
-                        finish();
+                        if(userPreferences.getFarmerId()!=0){
+                            startActivity(new Intent(getApplicationContext(), Dashboard.class));
+                            finish();
+                        }else{
+                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                            finish();
+                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

@@ -11,25 +11,26 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/decorate_button_accent"
         android:elevation="4dp"
-        android:text="Button"
-        android:textSize="18sp"
         android:fontFamily="@font/comfortaa_bold"
+        android:text="Process Payment"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/progress"
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
         app:layout_constraintTop_toBottomOf="@+id/cardView_paymt"
-        tools:text="Process Payment" />
+         />
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/progress"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
         android:visibility="gone"
@@ -45,6 +46,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:elevation="4dp"
+        app:contentInsetStartWithNavigation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -97,6 +99,31 @@
 
             >
 
+            <Spinner
+                android:id="@+id/spinner_month"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/cvv_edt"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_year"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_no_edt"
+                app:layout_constraintVertical_bias="0.533" />
+
+            <Spinner
+                android:id="@+id/spinner_year"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/cvv_edt"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/spinner_month"
+                app:layout_constraintTop_toBottomOf="@+id/card_no_edt" />
+
             <EditText
                 android:id="@+id/card_no_edt"
                 android:layout_width="0dp"
@@ -112,20 +139,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/card_name_edt" />
 
             <EditText
-                android:id="@+id/expires_edt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:drawableEnd="@drawable/ic_baseline_access_time_24"
-                android:ems="10"
-                android:hint="05 / 20"
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_no_edt" />
-
-            <EditText
                 android:id="@+id/cvv_edt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -134,10 +147,11 @@
                 android:ems="10"
                 android:hint="CVV"
                 android:inputType="number"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_year"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/expires_edt" />
+                app:layout_constraintTop_toBottomOf="@id/barrier" />
 
             <EditText
                 android:id="@+id/card_name_edt"
@@ -150,12 +164,20 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="spinner_month,spinner_year"
+                tools:layout_editor_absoluteY="220dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/payemnt_healing_txt"
+        android:id="@+id/cost_txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -166,16 +188,31 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toBottomOf="@+id/payemnt_healing_txt3"
+        app:layout_constraintTop_toBottomOf="@+id/name_txt"
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/payemnt_healing_txt3"
+        android:id="@+id/delivery_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Delivery Fee: NGN50"
+        android:textColor="@color/darkGrey"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline27"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline28"
+        app:layout_constraintTop_toBottomOf="@+id/cost_txt"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/name_txt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Rice"
-        android:textSize="18sp"
+        android:textColor="@color/darkGrey"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.0"
@@ -193,7 +230,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline27"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
-        app:layout_constraintTop_toBottomOf="@+id/payemnt_healing_txt"
+        app:layout_constraintTop_toBottomOf="@+id/delivery_txt"
         app:layout_constraintVertical_chainStyle="packed" />
 
 

@@ -2,10 +2,10 @@ package com.agrictech.techrice.model;
 
 public class Requirements {
     String title;
-    String icon;
+    int icon;
     String detail;
 
-    public Requirements(String title, String icon, String detail) {
+    public Requirements(String title, int icon, String detail) {
         this.title = title;
         this.icon = icon;
         this.detail = detail;
@@ -15,7 +15,7 @@ public class Requirements {
         return title;
     }
 
-    public String getIcon() {
+    public int getIcon() {
         return icon;
     }
 

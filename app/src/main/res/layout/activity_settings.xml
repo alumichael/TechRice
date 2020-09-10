@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:elevation="4dp"
+        app:contentInsetStartWithNavigation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -41,10 +42,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="16dp" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView_paymt"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="150dp"
         android:layout_marginTop="16dp"
         android:elevation="4dp"
         app:cardCornerRadius="10dp"
@@ -68,15 +70,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/man" />
+                app:srcCompat="@drawable/ic_secondaccent_person_24" />
 
             <TextView
-                android:id="@+id/textView1555"
+                android:id="@+id/account_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Me"
-                android:textColor="@color/GreyLight"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="Account"
+                android:textColor="@color/darkGrey"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView222"
                 app:layout_constraintStart_toEndOf="@+id/imageView222"
@@ -85,16 +89,43 @@
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/textView1666"
+                android:id="@+id/username_txt"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
+                android:fontFamily="@font/comfortaa_bold"
                 android:text="John Doe jjdjdj"
                 android:textAlignment="textEnd"
-                app:layout_constraintBottom_toBottomOf="@+id/textView1555"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView1555"
-                app:layout_constraintTop_toTopOf="@+id/textView1555" />
+                app:layout_constraintStart_toEndOf="@+id/account_txt"
+                app:layout_constraintTop_toTopOf="@+id/account_txt" />
+
+            <TextView
+                android:id="@+id/state_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:text="Abuja"
+                android:textAlignment="textEnd"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/username_txt"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/account_txt"
+                app:layout_constraintTop_toBottomOf="@+id/phone_txt2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/phone_txt2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="09012345678"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="@+id/username_txt"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/account_txt"
+                app:layout_constraintTop_toBottomOf="@+id/username_txt" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -126,15 +157,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/man" />
+                app:srcCompat="@drawable/ic_baseline_notify" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Me"
-                android:textColor="@color/GreyLight"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="Notification"
+                android:textColor="@color/darkGrey"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView2"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
@@ -142,13 +175,11 @@
                 app:layout_constraintVertical_bias="0.523"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <TextView
-                android:id="@+id/textView16"
+            <Switch
+                android:id="@+id/switch_notify"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:text="John Doe jjdjdj"
-                android:textAlignment="textEnd"
+                android:checked="true"
                 app:layout_constraintBottom_toBottomOf="@+id/textView15"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView15"
@@ -187,15 +218,17 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/man" />
+                app:srcCompat="@drawable/ic_baseline_help_24" />
 
             <TextView
                 android:id="@+id/textView155"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Me"
-                android:textColor="@color/GreyLight"
+                android:fontFamily="@font/comfortaa_bold"
+                android:text="Help"
+                android:textColor="@color/darkGrey"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView22"
                 app:layout_constraintStart_toEndOf="@+id/imageView22"
@@ -208,7 +241,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:text="John Doe jjdjdj"
+                android:text="Question?"
                 android:textAlignment="textEnd"
                 app:layout_constraintBottom_toBottomOf="@+id/textView155"
                 app:layout_constraintEnd_toEndOf="parent"

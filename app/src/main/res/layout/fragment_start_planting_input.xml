@@ -10,13 +10,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/decorate_button_accent"
         android:elevation="4dp"
-        android:text="Proceed"
         android:fontFamily="@font/comfortaa_bold"
-        android:textSize="18sp"
+        android:text="Proceed"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/progress6"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
@@ -29,14 +30,16 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:visibility="gone"
         app:indicatorColor="@color/colorAccent"
-        app:indicatorName="BallSpinFadeLoaderIndicator"
 
+        app:indicatorName="BallSpinFadeLoaderIndicator"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
-        app:layout_constraintStart_toStartOf="@+id/guideline11" />
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toBottomOf="@+id/upland_card" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
@@ -179,6 +182,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:checked="true"
                 app:layout_constraintBottom_toBottomOf="@+id/textView23"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline14"
