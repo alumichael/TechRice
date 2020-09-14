@@ -249,7 +249,7 @@ public class PaymentActivity extends AppCompatActivity {
                                         // for verification.
                                         provider_ref = transaction.getReference();
                                         Log.i("provider_ref", provider_ref);
-                                        ErrorAlert("Transaction Successfully, Please hold on");
+                                        dialogMessage("Transaction Successfully, Please hold on");
 
                                         mPaymentBtn.setVisibility(View.GONE);
                                         mProgress.setVisibility(View.VISIBLE);
@@ -267,7 +267,7 @@ public class PaymentActivity extends AppCompatActivity {
                                         // Save reference so you may send to server. If
                                         // error occurs with OTP, you should still verify on server.
 
-                                        ErrorAlert("loading...");
+                                        dialogMessage("loading...");
                                     }
 
                                     @Override
@@ -389,6 +389,24 @@ public class PaymentActivity extends AppCompatActivity {
                 .setTitle("Error ")
                 .setCancelable(false)
                 .setIcon(R.drawable.ic_baseline_error_outline_24)
+                .setMessage(message)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        dialog.dismiss();
+
+                    }
+                })
+                .show();
+    }
+
+
+    private void SuccessAlert(String message) {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Message ")
+                .setCancelable(false)
+                .setIcon(R.drawable.ic_baseline_done_outline_24)
                 .setMessage(message)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
